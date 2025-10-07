@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form Pendaftaran</title>
+  <link rel="stylesheet" href="style_.css" />
+</head>
+<body>
+  <main>
+    <h2>Form Pendaftaran
+      <p style="font-weight:400; margin-top:8px;">Pekerja PT. RYAN MUKTI</p>
+    </h2>
+
+    <form id="applyForm" action="index3.html" method="get">
+      <fieldset>
+        <legend>Data Calon Pekerja</legend>
+
+        <p>
+          <label>Nama Pekerja
+            <input name="nama" type="text" placeholder="Nama Pekerja" required />
+          </label>
+        </p>
+
+        <p>
+          <label>Tempat Lahir
+            <input name="tempat_lahir" type="text" placeholder="Tempat Lahir Anda" required />
+          </label>
+        </p>
+
+        <p style="gap:8px;">
+          <span>Jenis Kelamin</span>
+          <label><input type="radio" name="jenis_kelamin" value="L" required /> Laki-Laki</label>
+          <label><input type="radio" name="jenis_kelamin" value="P" /> Perempuan</label>
+        </p>
+
+        <p>
+          <label>Alamat
+            <input name="alamat" type="text" placeholder="Alamat Anda" required />
+          </label>
+        </p>
+
+        <p>
+          <label>Tanggal Lahir
+            <input name="tanggal_lahir" type="date" />
+          </label>
+        </p>
+
+        <p>
+          <label>NIK
+            <input name="nik" type="text" placeholder="NIK Anda" required />
+          </label>
+        </p>
+
+        <p>
+          <label>NISN
+            <input name="nisn" type="text" placeholder="NISN Anda" required />
+          </label>
+        </p>
+
+        <p>
+          <label>Agama
+            <select name="agama" required>
+              <option value="">-- Pilih Agama --</option>
+              <option>Islam</option>
+              <option>Kristen</option>
+              <option>Katolik</option>
+              <option>Hindu</option>
+              <option>Budha</option>
+            </select>
+          </label>
+        </p>
+
+        <p style="gap:8px;">
+          <label>No. RT <input name="rt" type="text" placeholder="Contoh RT.02" required /></label>
+          <label>No. RW <input name="rw" type="text" placeholder="Contoh RW.08" required /></label>
+        </p>
+
+        <p>
+          <label>Dusun
+            <input name="dusun" type="text" placeholder="Dusun Anda" required />
+          </label>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Data Ayah</legend>
+
+        <p>
+          <label>Nama Ayah <input name="nama_ayah" type="text" placeholder="Nama Ayah" required /></label>
+        </p>
+
+        <p>
+          <label>Tahun Lahir <input name="tahun_lahir_ayah" type="date" required /></label>
+        </p>
+
+        <p>
+          <label>Pendidikan
+            <select name="pendidikan_ayah">
+              <option>SD</option>
+              <option>SMP</option>
+              <option>SMA</option>
+              <option>SMK</option>
+              <option>S1</option>
+              <option>S2</option>
+              <option>S3</option>
+              <option>TIDAK SEKOLAH</option>
+            </select>
+          </label>
+        </p>
+
+        <p>
+          <label>Pekerjaan
+            <select name="pekerjaan_ayah">
+              <option>Karyawan swasta</option>
+              <option>bumn/bumd</option>
+              <option>teknik komputer</option>
+              <option>buruh</option>
+              <option>driver ojol</option>
+              <option>sales</option>
+              <option>kuli bangunan</option>
+              <option>koki</option>
+              <option>arsitek</option>
+              <option>staf bank</option>
+              <option>pemadam kebakaran</option>
+              <option>polisi</option>
+              <option>tni</option>
+              <option>pekerja lepas</option>
+              <option>nelayan</option>
+            </select>
+          </label>
+        </p>
+
+        <p>
+          <label>Penghasilan Bulanan
+            <select name="penghasilan_ayah">
+              <option value="0-1">0 - 1 Juta</option>
+              <option value="1-3">1 - 3 Juta</option>
+              <option value="3-6">3 - 6 Juta</option>
+              <option value="6-10">6 - 10 Juta</option>
+              <option value=">10">Di atas 10 Juta</option>
+              <option value="tidak_berpenghasilan">Tidak Berpenghasilan</option>
+            </select>
+          </label>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Data Ibu</legend>
+
+        <p>
+          <label>Nama Ibu <input name="nama_ibu" type="text" placeholder="Nama Ibu" required /></label>
+        </p>
+
+        <p>
+          <label>Tahun Lahir <input name="tahun_lahir_ibu" type="date" /></label>
+        </p>
+
+        <p>
+          <label>Pendidikan
+            <select name="pendidikan_ibu">
+              <option>SD</option>
+              <option>SMP</option>
+              <option>SMA</option>
+              <option>SMK</option>
+              <option>S1</option>
+              <option>S2</option>
+              <option>S3</option>
+              <option>TIDAK SEKOLAH</option>
+            </select>
+          </label>
+        </p>
+
+        <p>
+          <label>Pekerjaan
+            <select name="pekerjaan_ibu">
+              <option>Karyawan swasta</option>
+              <option>bumn/bumd</option>
+              <option>teknik komputer</option>
+              <option>buruh</option>
+              <option>driver ojol</option>
+              <option>sales</option>
+              <option>kuli bangunan</option>
+              <option>koki</option>
+              <option>arsitek</option>
+              <option>staf bank</option>
+              <option>pemadam kebakaran</option>
+              <option>polisi</option>
+              <option>tni</option>
+              <option>pekerja lepas</option>
+              <option>nelayan</option>
+              <option>ibu rumah tangga</option>
+            </select>
+          </label>
+        </p>
+
+        <p>
+          <label>Penghasilan Bulanan
+            <select name="penghasilan_ibu">
+              <option value="0-1">0 - 1 Juta</option>
+              <option value="1-3">1 - 3 Juta</option>
+              <option value="3-6">3 - 6 Juta</option>
+              <option value="6-10">6 - 10 Juta</option>
+              <option value=">10">Di atas 10 Juta</option>
+              <option value="tidak_berpenghasilan">Tidak Berpenghasilan</option>
+            </select>
+          </label>
+        </p>
+      </fieldset>
+
+      <p>
+        <label>Jurusan yang Dipilih
+          <select name="jurusan" id="jurusan" required>
+            <option value="">-- Pilih Jurusan --</option>
+            <option value="tkj">Teknik Komputer & Jaringan (TKJ)</option>
+            <option value="rpl">Rekayasa Perangkat Lunak (RPL)</option>
+            <option value="mm">Multimedia</option>
+            <option value="akuntansi">Akuntansi</option>
+            <option value="perhotelan">Perhotelan</option>
+            <option value="tata_boga">Tata Boga</option>
+            <option value="otomotif">Otomotif</option>
+            <option value="bdp">Bisnis Daring & Pemasaran (BDP)</option>
+            <option value="agribisnis">Agribisnis</option>
+            <option value="ipa">IPA</option>
+            <option value="ips">IPS</option>
+            <option value="lainnya">Lainnya</option>
+          </select>
+        </label>
+      </p>
+
+      <details>
+        <p>
+          <input type="checkbox" required /> Saya menyatakan dengan sesungguhnya
+          bahwa isian data dalam formulir ini adalah benar. Apabila ternyata
+          data tersebut tidak benar/palsu, maka saya bersedia menerima sanksi
+          berupa pembatalan sebagai calon peserta didik.
+        </p>
+      </details>
+
+      <p>
+        <button type="submit">Kirim Data</button>
+        <button type="reset">Reset</button>
+      </p>
+    </form>
+  </main>
+</body>
+</html>

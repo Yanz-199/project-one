@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* added for consistent sizing */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    /* gambar diganti dengan gradient pastel estetik yang bergerak */
+    background-image: linear-gradient(135deg, #ffd6e0 0%, #fbe8a6 32%, #c7f9cc 64%, #aee7ff 100%);
+    background-size: 200% 200%;
+    animation: gradient8G 12s ease infinite;
+    overflow: auto; /* allow scrolling on small screens */
+    background-repeat: no-repeat;
+    background-position: center;
+    /* hilangkan background-attachment:fixed agar animasi lancar di mobile */
+    color: #000; /* teks default jadi hitam */
+}
+h2 {
+    text-align: center;
+    margin: 20px auto;
+}
+@keyframes gradient8G {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 50% 50%; }
+    100% { background-position: 100% 50%; }
+}
+form {
+    width: min(92%, 360px);
+    max-width: 360px;
+    height: auto;
+    border: 1px solid rgba(255,255,255,0.18);
+    margin: 6vh auto;
+    padding: 22px;
+    border-radius: 14px;
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    box-shadow: 0 8px 30px rgba(3,6,18,0.5);
+    background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.06));
+    text-align: center;
+    z-index: 10;
+    overflow: hidden;
+    color: #111; /* teks di form jadi gelap */
+}
+input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    margin: 12px 0;
+    border-radius: 10px;
+}
+.l1 {
+    width: 48%;
+    padding: 8px;
+    display: inline-block;
+    margin: 10px 1%;
+    vertical-align: middle;
+    border-radius: 10px;
+}
+.l2 {
+    width: 48%;
+    padding: 8px;
+    display: inline-block;
+    margin: 10px 1%;
+    vertical-align: middle;
+    border-radius: 10px;
+}
+.l3 {
+    width: 100%;
+    padding: 8px;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 10px;
+}
+
+/* tombol / link style tambahan */
+.l1, .l2, .l3, .link-button {
+    background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    color: #111; /* teks tombol/link jadi hitam */
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 6px 16px rgba(2,6,23,0.45);
+    font-weight: 600;
+    text-decoration: none;
+    outline: none;
+}
+button.l1, button.l2 {
+    cursor: pointer;
+}
+a.link-button {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+/* small visual tweak so anchor acts like button inside .l3/.l2 */
+a.l3, a.l2, a.l1 { display: inline-block; }
+
+/* small devices (phones) */
+@media (max-width: 480px) {
+    .l1, .l2 {
+        width: 48%;
+        padding: 10px;
+        font-size: 14px;
+    }
+    .l3 {
+        width: 100%;
+        margin-top: 8px;
+    }
+    form {
+        margin: 6vh auto;
+        padding: 16px;
+    }
+}
+
+/* tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+    form {
+        width: min(92%, 420px);
+    }
+}
+
+/* larger laptops/desktops */
+@media (min-width: 1025px) {
+    form {
+        width: 360px;
+    }
+}
+
+/* tata letak khusus untuk form pendaftaran (index2.html) */
+#applyForm {
+    width: min(96%, 760px);
+    max-width: 760px;
+    margin: 4vh auto;
+    padding: 22px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 12px 36px rgba(2,6,23,0.45);
+    color: #111; /* teks form pendaftaran jadi hitam */
+}
+
+/* header kecil di halaman form */
+#applyForm ~ h2, h2 { color: #fff; text-align: center; margin-bottom: 6px; }
+
+/* fieldset / legend */
+#applyForm fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+}
+#applyForm legend {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+/* baris dan label input */
+#applyForm p {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    color: #111;
+}
+#applyForm p > label { display: inline-flex; align-items: center; gap:8px; font-size: .95rem; }
+
+/* input / textarea styling */
+#applyForm input[type="text"],
+#applyForm input[type="email"],
+#applyForm input[type="tel"],
+#applyForm textarea {
+    flex: 1 1 320px;
+    min-width: 180px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.10);
+    color: #111; /* teks input jadi hitam */
+    background: rgba(255,255,255,0.92); /* lebih terang agar teks kontras */
+    outline: none;
+    transition: box-shadow .18s ease, border-color .18s ease;
+}
+#applyForm input:focus, #applyForm textarea:focus {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    border-color: rgba(170,220,255,0.7);
+}
+
+/* radio kecil */
+#applyForm input[type="radio"] { width: 18px; height: 18px; accent-color: #7fd3ff; }
+
+/* tombol kirim / logout */
+#applyForm .l3 {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #fff, #f0f0f0); /* tombol terang agar kontras */
+    border: 1px solid rgba(0,0,0,0.06);
+    color: #111;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(2,6,23,0.4);
+    font-weight: 600;
+}
+#logoutBtn {
+    display: inline-block;
+    padding: 10px 14px;
+    margin-top: 8px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(0,0,0,0.06);
+    color: #111;
+    cursor: pointer;
+}
+
+/* small devices: stack inputs vertically */
+@media (max-width: 600px) {
+    #applyForm p {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #applyForm input[type="text"],
+    #applyForm input[type="email"],
+    #applyForm textarea {
+        width: 100%;
+        min-width: 0;
+    }
+    #applyForm {
+        padding: 16px;
+        margin: 3vh 12px;
+    }
+}

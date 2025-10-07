@@ -1,0 +1,51 @@
+<!-- new file: register.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register</title>
+  <link rel="stylesheet" href="style_.css" />
+</head>
+<body>
+  <form id="registerForm" action="">
+    <h2>REGISTER</h2>
+    <input id="reg-username" type="text" placeholder="Username" required />
+    <input id="reg-email" type="email" placeholder="Email" required />
+    <input id="reg-password" type="password" placeholder="Password" required />
+    <input id="reg-confirm" type="password" placeholder="Confirm Password" required />
+    <button class="l3" type="submit">REGISTER</button>
+    <a href="index.html" class="l2 link-button" style="display:inline-block; margin-top:10px;">Back to Login</a>
+    <div id="reg-msg" style="color:#ffdede; margin-top:10px;"></div>
+  </form>
+
+  <script>
+    const form = document.getElementById('registerForm');
+    const msg = document.getElementById('reg-msg');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = document.getElementById('reg-username').value.trim();
+      const email = document.getElementById('reg-email').value.trim();
+      const password = document.getElementById('reg-password').value;
+      const confirm = document.getElementById('reg-confirm').value;
+
+      if (!username || !email || !password) {
+        msg.textContent = 'Isi semua field terlebih dahulu.';
+        return;
+      }
+      if (password !== confirm) {
+        msg.textContent = 'Password dan konfirmasi tidak cocok.';
+        return;
+      }
+
+      // Simpan user ke localStorage (demo sederhana)
+      const user = { username, email, password };
+      localStorage.setItem('registeredUser', JSON.stringify(user));
+
+      // Arahkan ke login dengan query param
+      location.href = 'index.html?registered=1';
+    });
+  </script>
+</body>
+</html>

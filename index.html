@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login</title>
+  <link rel="stylesheet" href="style_.css" />
+</head>
+<body>
+  <form id="loginForm" action="">
+    <h2>LOGIN</h2>
+    <input id="login-username" type="text" placeholder="Username" required />
+    <input id="login-password" type="password" placeholder="Password" required />
+    <button class="l1" type="submit">LOGIN</button>
+    <button class="l2" type="reset">RESET</button>
+    <a href="register.html" class="l3 link-button">REGISTER</a>
+    <div id="login-msg" style="color:#ffdede; margin-top:10px;"></div>
+  </form>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const loginMsg = document.getElementById('login-msg');
+
+    // Tampilkan pesan jika baru registrasi
+    if (new URLSearchParams(location.search).get('registered') === '1') {
+      loginMsg.style.color = '#bfffc2';
+      loginMsg.textContent = 'Registrasi berhasil. Silakan login.';
+      setTimeout(() => { loginMsg.textContent = ''; loginMsg.style.color = '#ffdede'; }, 4000);
+    }
+
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value;
+
+      const stored = localStorage.getItem('registeredUser');
+      if (!stored) {
+        loginMsg.textContent = 'Belum ada akun terdaftar. Silakan register dulu.';
+        return;
+      }
+      const user = JSON.parse(stored);
+
+      // Bandingkan credential — jika berbeda => gagal
+      if (username === user.username && password === user.password) {
+        loginMsg.style.color = '#bfffc2';
+        loginMsg.textContent = 'Login berhasil. Mengarahkan ke formulir...';
+        // sukses -> lanjut ke form pendaftaran (index2.html)
+        setTimeout(() => { location.href = 'index2.html'; }, 900);
+      } else {
+        loginMsg.style.color = '#ffdede';
+        loginMsg.textContent = 'Username atau password salah. Login gagal.';
+      }
+    });
+  </script>
+</body>
+</html>
+
